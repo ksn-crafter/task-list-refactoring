@@ -41,10 +41,14 @@ public final class TaskList {
     }
 
     private void show() throws IOException {
-        for (Map.Entry<String, List<com.codurance.training.tasks.Task>> project : projects.entrySet()) {
+        writeProjectTasksToOutputStream();
+    }
+
+    private void writeProjectTasksToOutputStream() throws IOException {
+        for (Map.Entry<String, List<Task>> project : projects.entrySet()) {
             writer.write(project.getKey());
             writer.write("\n");
-            for (com.codurance.training.tasks.Task task : project.getValue()) {
+            for (Task task : project.getValue()) {
                 writer.write(String.format("[%c] %d: %s%n", (task.isDone() ? 'x' : ' '), task.getId(), task.getDescription()));
             }
         }

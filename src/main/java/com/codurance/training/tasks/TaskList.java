@@ -49,13 +49,9 @@ public final class TaskList {
             writer.write(project.getKey());
             writer.write("\n");
             for (Task task : project.getValue()) {
-                writer.write(format(task));
+                writer.write(task.format());
             }
         }
-    }
-
-    private static String format(Task task) {
-        return String.format("[%c] %d: %s%n", (task.isDone() ? 'x' : ' '), task.getId(), task.getDescription());
     }
 
     private void add(String commandLine) {

@@ -5,7 +5,7 @@ import com.codurance.training.tasks.Task;
 import java.util.List;
 import java.util.Map;
 
-public class Uncheck extends TaskDoneToggler implements ICommandHandler {
+public class Uncheck extends TaskDoneChanger implements ICommandHandler {
     private final Map<String, List<Task>> projects;
 
     Uncheck(Map<String,List<Task>> projects){
@@ -15,7 +15,7 @@ public class Uncheck extends TaskDoneToggler implements ICommandHandler {
     @Override
     public void execute(Command command){
         String idString = command.argumentAt(0);
-        toggleTask(idString, false,projects);
+        changeTaskDone(idString, false,projects);
     }
 
 }

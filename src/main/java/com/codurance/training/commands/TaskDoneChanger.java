@@ -7,14 +7,14 @@ import java.util.Map;
 
 import static java.lang.System.out;
 
-public class TaskDoneToggler {
+public class TaskDoneChanger {
     //TODO: add test cases for toggleTask
-    protected void toggleTask(String idString, boolean done, Map<String, List<Task>> projects) {
+    protected void changeTaskDone(String idString, boolean done, Map<String, List<Task>> projects) {
         int id = Integer.parseInt(idString);
         for (Map.Entry<String, List<Task>> project : projects.entrySet()) {
             for (Task task : project.getValue()) {
                 if (task.idEqualTo((long)id)) {
-                    task.setDone(done);
+                    task.changeDone(done);
                     return;
                 }
             }

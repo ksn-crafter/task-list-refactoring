@@ -5,7 +5,7 @@ import com.codurance.training.tasks.Task;
 import java.util.List;
 import java.util.Map;
 
-public class Check extends TaskDoneToggler implements ICommandHandler {
+public class Check extends TaskDoneChanger implements ICommandHandler {
     private final Map<String, List<Task>> projects;
 
     Check(Map<String,List<Task>> projects){
@@ -15,6 +15,6 @@ public class Check extends TaskDoneToggler implements ICommandHandler {
     @Override
     public void execute(Command command){
         String idString = command.argumentAt(0);
-        toggleTask(idString, true,projects);
+        changeTaskDone(idString, true,projects);
     }
 }

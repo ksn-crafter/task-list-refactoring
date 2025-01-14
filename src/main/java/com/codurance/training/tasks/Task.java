@@ -19,7 +19,7 @@ public final class Task {
         return id == targetId;
     }
 
-    public void setDone(boolean done) {
+    public void changeDone(boolean done) {
         this.done = done;
     }
 }

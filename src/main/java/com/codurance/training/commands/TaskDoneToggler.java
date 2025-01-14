@@ -13,7 +13,7 @@ public class TaskDoneToggler {
         int id = Integer.parseInt(idString);
         for (Map.Entry<String, List<Task>> project : projects.entrySet()) {
             for (Task task : project.getValue()) {
-                if (task.getId() == id) {
+                if (task.idEqualTo((long)id)) {
                     task.setDone(done);
                     return;
                 }

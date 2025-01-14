@@ -11,6 +11,7 @@ public class AddProject implements ICommandHandler {
     }
 
 
+    //TODO: add validations and unit tests
     @Override
     public void execute(Command command){
         projects.addProject(command.argumentAt(1));

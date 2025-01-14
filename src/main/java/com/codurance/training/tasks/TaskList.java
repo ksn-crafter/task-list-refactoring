@@ -5,9 +5,6 @@ import com.codurance.training.commands.CommandHandlerFactory;
 import com.codurance.training.commands.interfaces.ICommandHandler;
 
 import java.io.Writer;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 //TODO: this should be a runner class rather than a TaskList
 public final class TaskList {

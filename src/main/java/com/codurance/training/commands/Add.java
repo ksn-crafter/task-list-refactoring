@@ -2,10 +2,6 @@ package com.codurance.training.commands;
 
 import com.codurance.training.commands.interfaces.ICommandHandler;
 import com.codurance.training.tasks.Projects;
-import com.codurance.training.tasks.Task;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class Add implements ICommandHandler {
@@ -17,6 +13,7 @@ public class Add implements ICommandHandler {
 
     }
 
+    //TODO: add validations and unit tests
     @Override
     public void execute(Command command){
         String subcommand = command.argumentAt(0);

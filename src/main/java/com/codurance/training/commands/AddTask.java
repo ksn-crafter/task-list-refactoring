@@ -10,7 +10,7 @@ public class AddTask implements ICommandHandler {
         this.projects = projects;
     }
 
-
+    //TODO: add validations and unit tests
     @Override
     public void execute(Command command){
         projects.addTask(command.argumentAt(1),command.argumentAt(2));

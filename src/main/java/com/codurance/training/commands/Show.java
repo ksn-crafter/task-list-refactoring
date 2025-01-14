@@ -18,16 +18,10 @@ public class Show implements ICommandHandler {
         this.projects = projects;
     }
 
+    //TODO: add validations and unit tests
     @Override
     public void execute(Command command){
         try {
-//            for (Map.Entry<String, List<Task>> project : projects.entrySet()) {
-//                writer.write(project.getKey());
-//                writer.write("\n");
-//                for (Task task : project.getValue()) {
-//                    writer.write(task.format());
-//                }
-//            }
             writer.write(projects.format());
         } catch (IOException e) {
             System.out.println("An exception occurred while executing the show command");

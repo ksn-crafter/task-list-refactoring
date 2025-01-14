@@ -10,6 +10,7 @@ public class Uncheck implements ICommandHandler {
         this.projects = projects;
     }
 
+    //TODO: add validations and unit tests
     @Override
     public void execute(Command command){
         String idString = command.argumentAt(0);

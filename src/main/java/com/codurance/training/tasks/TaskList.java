@@ -9,13 +9,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+//TODO: this should be a runner class rather than a TaskList
 public final class TaskList {
-    private final Map<String, List<Task>> projects = new LinkedHashMap<>();
-
     private final CommandHandlerFactory commandHandlerFactory;
 
     public TaskList(Writer writer) {
-        commandHandlerFactory = new CommandHandlerFactory(writer,projects);
+        commandHandlerFactory = new CommandHandlerFactory(writer,new Projects());
     }
 
     public void execute(String commandLine) throws Exception {

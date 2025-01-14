@@ -1,6 +1,7 @@
 package com.codurance.training.commands;
 
 import com.codurance.training.commands.interfaces.ICommandHandler;
+import com.codurance.training.tasks.Projects;
 import com.codurance.training.tasks.Task;
 
 import java.io.Writer;
@@ -11,8 +12,9 @@ import java.util.Map;
 public class CommandHandlerFactory {
     Map<CommandType, ICommandHandler> commandMap;
 
-    public CommandHandlerFactory(Writer writer, Map<String, List<Task>> projects){
+    public CommandHandlerFactory(Writer writer,Projects projects){
       commandMap = new HashMap<>();
+
       commandMap.put(CommandType.SHOW,new Show(writer,projects));
       commandMap.put(CommandType.ADD,new Add(projects));
       commandMap.put(CommandType.CHECK,new Check(projects));
